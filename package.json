@@ -5,7 +5,8 @@
   "main": "./dist/index.js",
   "scripts": {
     "start": "tsc && node ./dist/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest --coverage"
   },
   "keywords": [
     "cbrnz",
@@ -27,10 +28,38 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@types/chai": "^4.2.22",
+    "@types/mocha": "^9.0.0",
     "@types/node": "^16.11.9",
+    "@types/sinon": "^10.0.6",
+    "@types/test-console": "^1.1.1",
+    "babel-jest": "^27.3.1",
+    "chai": "^4.3.4",
+    "jest": "^27.3.1",
+    "mocha": "^9.1.3",
+    "test-console": "^2.0.0",
+    "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
   },
   "dependencies": {
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/jest": "^27.0.3",
+    "chalk": "^4.1.2",
     "moment-timezone": "^0.5.34"
+  },
+  "jest": {
+    "coverageDirectory": "../coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 70,
+        "lines": 70,
+        "statements": -40
+      }
+    },
+    "testEnvironment": "node",
+    "rootDir": "./src"
   }
 }

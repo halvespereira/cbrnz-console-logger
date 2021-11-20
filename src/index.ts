@@ -1,11 +1,11 @@
-const moment = require("moment");
+const moment = require("moment-timezone");
+import { getBGColorByLevel } from "./utils/utils";
 
 /**
  * Basic Logger - all messages are written to the console
- * Level is taken from MoleculerJS config variable LOGLEVEL
  * Levels available: info, debug, warn, error
  */
-export default function ConsoleLogger() {
+function ConsoleLogger() {
   /**
    * Base logging function
    *
@@ -13,16 +13,16 @@ export default function ConsoleLogger() {
    * @param message
    * @param args
    */
+
   function log(level: string, message: string, args?: any) {
-    const consoleLogger: any = console;
+    const cbrnzConsoleLogger: any = console;
     const currentDateTime = moment().tz(Intl.DateTimeFormat().resolvedOptions().timeZone);
-    const timestamp: string = `[${currentDateTime.format()}] `;
-    if (consoleLogger && consoleLogger[level]) {
-      if (args !== undefined) {
-        consoleLogger[level](timestamp + message, args);
-      } else {
-        consoleLogger[level](timestamp + message);
-      }
+    const timestamp: string = `[${currentDateTime.format("dddd, MMMM Do YYYY, h:mm:ss a z")}] `;
+
+    if (args !== undefined) {
+      cbrnzConsoleLogger[level](timestamp + message, args);
+    } else {
+      cbrnzConsoleLogger[level](timestamp + message);
     }
   }
 
@@ -31,7 +31,7 @@ export default function ConsoleLogger() {
    * @param args optional arguments array
    */
   function info(message: string, args?: any) {
-    log("info", "INFO::" + message, args);
+    log("info", getBGColorByLevel("info")(" INFO ") + "::" + message, args);
   }
 
   /**
@@ -39,7 +39,7 @@ export default function ConsoleLogger() {
    * @param args optional arguments array
    */
   function debug(message: string, args?: any) {
-    log("debug", "DEBUG::" + message, args);
+    log("debug", getBGColorByLevel("debug")(" DEBUG ") + "::" + message, args);
   }
 
   /**
@@ -47,7 +47,7 @@ export default function ConsoleLogger() {
    * @param args optional arguments array
    */
   function warn(message: string, args?: any) {
-    log("warn", "WARN::" + message, args);
+    log("warn", getBGColorByLevel("warn")(" WARN ") + "::" + message, args);
   }
 
   /**
@@ -55,7 +55,7 @@ export default function ConsoleLogger() {
    * @param args optional arguments array
    */
   function error(message: string, args?: any) {
-    log("error", "ERROR::" + message, args);
+    log("error", getBGColorByLevel("error")(" ERROR ") + "::" + message, args);
   }
 
   return {
@@ -65,3 +65,5 @@ export default function ConsoleLogger() {
     error,
   };
 }
+
+export default ConsoleLogger;
