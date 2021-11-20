@@ -12,6 +12,8 @@ Use `ConsoleLogger` wherever you want to write to the console.
 
 ```js
 import ConsoleLogger from "cbrnz-console-logger";
+//or
+const ConsoleLogger = require("cbrnz-console-logger");
 
 ConsoleLogger().info("type log here");
 ConsoleLogger().info("type message here", "args here");
