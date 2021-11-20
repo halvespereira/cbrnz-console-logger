@@ -2,9 +2,10 @@
   "name": "cbrnz-console-logger",
   "version": "1.0.0",
   "description": "",
-  "main": "./built/index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "start": "tsc && node ./built/index.js"
+    "start": "tsc && node ./dist/index.js",
+    "build": "tsc"
   },
   "keywords": [
     "cbrnz",
@@ -16,6 +17,11 @@
     "name": "Henrique Pereira",
     "url": "https://github.com/halvespereira"
   },
+  "contributors": [
+    {
+      "name": "Ed Lopez"
+    }
+  ],
   "repository": {
     "url": "https://github.com/halvespereira/cbrnz-console-logger"
   },
