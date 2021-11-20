@@ -6,8 +6,9 @@
   "scripts": {
     "build": "tsc",
     "test": "jest --coverage",
-    "version": "",
-    "postversion": "git add . && git push --tags && npm publish"
+    "git": "git add . && git commit -m",
+    "postgit": "git push",
+    "v": "npm version"
   },
   "keywords": [
     "cbrnz",
