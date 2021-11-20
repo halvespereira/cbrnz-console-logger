@@ -1,13 +1,9 @@
 import { assert } from "chai";
 import "mocha";
-import ConsoleLogger from "../../index";
+import ConsoleLogger from "../../src/index";
 import stdout from "test-console";
 
 describe("Testing ConsoleLogger()", function () {
-  beforeEach(() => {
-    const inspect = stdout.stdout.inspect();
-    inspect.restore();
-  });
   it("should call console INFO", function () {
     const infoOutput = stdout.stdout.inspectSync(() => {
       ConsoleLogger().info("info test");
