@@ -66,4 +66,4 @@ function ConsoleLogger() {
   };
 }
 
-export default ConsoleLogger;
+module.exports = ConsoleLogger;
