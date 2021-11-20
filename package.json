@@ -1,6 +1,6 @@
 {
   "name": "cbrnz-console-logger",
-  "version": "2.0.0",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "test": "jest --coverage",
     "git": "git add . && git commit -m",
     "postgit": "git push",
-    "version": "npm version"
+    "version": "npm version",
+    "postversion": "npm run test && npm publish"
   },
   "keywords": [
     "cbrnz",
