@@ -1,11 +1,13 @@
 {
   "name": "cbrnz-console-logger",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "version": "",
+    "postversion": "git add . && git push --tags && npm publish"
   },
   "keywords": [
     "cbrnz",
