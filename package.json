@@ -1,0 +1,30 @@
+{
+  "name": "cbrnz-console-logger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./built/index.js",
+  "scripts": {
+    "start": "tsc && node ./built/index.js"
+  },
+  "keywords": [
+    "cbrnz",
+    "cbrnz-console-logger",
+    "console-logger",
+    "logger"
+  ],
+  "author": {
+    "name": "Henrique Pereira",
+    "url": "https://github.com/halvespereira"
+  },
+  "repository": {
+    "url": "https://github.com/halvespereira/cbrnz-console-logger"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.11.9",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "moment-timezone": "^0.5.34"
+  }
+}
